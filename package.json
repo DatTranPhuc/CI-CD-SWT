@@ -1,0 +1,48 @@
+{
+  "name": "CI-CD-SWT",
+  "version": "1.0.0",
+  "description": "CI/CD Test Site with Java backend and web frontend",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -o",
+    "start": "npx http-server . -p 8080",
+    "build": "echo 'Static site - no build needed'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:java": "mvn test",
+    "test:all": "npm run test:java && npm run test"
+  },
+  "keywords": [
+    "cicd",
+    "github-actions",
+    "java",
+    "junit",
+    "github-pages"
+  ],
+  "author": "CI/CD Test",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/dom": "^9.3.4",
+    "puppeteer": "^21.5.2",
+    "jsdom": "^23.0.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "testMatch": ["**/tests/**/*.test.js"],
+    "collectCoverageFrom": [
+      "index.html",
+      "!node_modules/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/CI-CD-SWT.git"
+  },
+  "homepage": "https://your-username.github.io/CI-CD-SWT"
+}
