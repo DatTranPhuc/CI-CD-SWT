@@ -50,7 +50,7 @@ public class DateUtilsTest {
     void testCheckDate_InvalidDay() {
         assertThrows(IllegalArgumentException.class, () -> DateUtils.checkDate(2021, 1, 0));
         assertThrows(IllegalArgumentException.class, () -> DateUtils.checkDate(2021, 1, 32));
-        assertTrue(DateUtils.checkDate(2021, 2, 30)); // cố tình sai để CI fail
+
 
     }
 }
